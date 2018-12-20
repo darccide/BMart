@@ -33,6 +33,6 @@ server.express.use(async (req, res, next) => {
   next();
 });
 
-server.start( () => {
+server.start( deets => {
   console.log( `Server is now running on port http://localhost:${deets.port}` )
 });
