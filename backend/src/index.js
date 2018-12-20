@@ -9,21 +9,21 @@ const server = createServer();
 
 server.express.use(cookieParser());
 
-// decode the JWT to be able to get the user Id on each request
+// decode the JWT so we can get the user Id on each request
 server.express.use((req, res, next) => {
   const { token } = req.cookies;
   if (token) {
     const { userId } = jwt.verify(token, process.env.APP_SECRET);
-    // put the userId onto the req fro future requests to access
+    // put the userId onto the req for future requests to access
     req.userId = userId;
   }
   next();
 });
 
-// middleware that populates the user on each request
+// 2. Create a middleware that populates the user on each request
 
 server.express.use(async (req, res, next) => {
-  // if not logged in, skip this
+  // if they aren't logged in, skip this
   if (!req.userId) return next();
   const user = await db.query.user(
     { where: { id: req.userId } },
@@ -33,14 +33,6 @@ server.express.use(async (req, res, next) => {
   next();
 });
 
-server.start(
-  // {
-  //   cors: {
-  //     credentials: true,
-  //     origin: process.env.FRONTEND_URL,
-  //   },
-  },
-  deets => {
-    console.log(`Server is now running on port http:/localhost:${deets.port}`);
-  }
-);
+server.start( () => {
+  console.log( `Server is now running on port http://localhost:${deets.port}` )
+});

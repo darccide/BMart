@@ -51,8 +51,7 @@ const StyledHeader = styled.header`
   .sub-bar {
     display: grid;
     grid-template-columns: 1fr auto;
-    border-bottom: 3px solid ${props =>
-    props.theme.black};
+    border-bottom: 3px solid ${props => props.theme.black};
   }
 `;
 
