@@ -51,7 +51,7 @@ const Cart = () => (
           <footer>
             <p>{formatMoney(calcTotalPrice(me.cart))}</p>
             {me.cart.length && (
-                <BmartButton>Checkout</BmartButton>
+                <button type="submit">Checkout</button>
             )}
           </footer>
         </CartStyles>
