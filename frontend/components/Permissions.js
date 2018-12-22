@@ -2,7 +2,6 @@ import { Query, Mutation } from 'react-apollo';
 import Error from './ErrorMessage';
 import gql from 'graphql-tag';
 import Table from './styles/Table';
-import BmartButton from './styles/BmartButton';
 import PropTypes from 'prop-types';
 
 const possiblePermissions = [
@@ -115,9 +114,9 @@ class UserPermissions extends React.Component {
                 </td>
               ))}
               <td>
-                <BmartButton type="button" disabled={loading} onClick={updatePermissions}>
+                <button type="button" disabled={loading} onClick={updatePermissions}>
                   Updat{loading ? 'ing' : 'e'}
-                </BmartButton>
+                </button>
               </td>
             </tr>
           </>
