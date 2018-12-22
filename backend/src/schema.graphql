@@ -5,7 +5,7 @@ type SuccessMessage {
 }
 
 type Mutation {
-  createItem(title: String, description: String, price: Int, image: String): Item!
+  createItem(title: String, description: String, price: Int, image: String, largeImage: String): Item!
   updateItem(id: ID!, title: String, description: String, price: Int): Item!
   deleteItem(id: ID!): Item
   signup(email: String!, password: String!, name: String!): User!
@@ -26,7 +26,7 @@ type Query {
   users: [User]!
 }
 
-type User {
+type User{
   id: ID!
   name: String!
   email: String!

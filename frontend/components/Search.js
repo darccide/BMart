@@ -23,7 +23,7 @@ function routeToItem(item) {
       id: item.id,
     },
   });
-};
+}
 
 class AutoComplete extends React.Component {
   state = {
@@ -31,12 +31,13 @@ class AutoComplete extends React.Component {
     loading: false,
   };
   onChange = debounce(async (e, client) => {
+    console.log('Searching...');
     // turn loading on
     this.setState({ loading: true });
     // Manually query apollo client
     const res = await client.query({
       query: SEARCH_ITEMS_QUERY,
-      variables: { searchTerm: e.target.value }
+      variables: { searchTerm: e.target.value },
     });
     this.setState({
       items: res.data.items,
@@ -47,8 +48,8 @@ class AutoComplete extends React.Component {
     resetIdCounter();
     return (
       <SearchStyles>
-        <Downshift onChange={routeToItem} itemToString={item => (item === null ? '': item.title)}>
-          {({ getInputProps, getItemProps, isOpen, inputValue, highlightedIndex}) => (
+        <Downshift onChange={routeToItem} itemToString={item => (item === null ? '' : item.title)}>
+          {({ getInputProps, getItemProps, isOpen, inputValue, highlightedIndex }) => (
             <div>
               <ApolloConsumer>
                 {client => (
@@ -74,7 +75,7 @@ class AutoComplete extends React.Component {
                       key={item.id}
                       highlighted={index === highlightedIndex}
                     >
-                      <img width="50" src={item.image} alt="item.title" />
+                      <img width="50" src={item.image} alt={item.title} />
                       {item.title}
                     </DropDownItem>
                   ))}

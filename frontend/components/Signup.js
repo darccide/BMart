@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Mutation } from 'react-apollo';
+import { Mutation, Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Form from './styles/Form';
 import Error from './ErrorMessage';
@@ -37,50 +37,51 @@ class Signup extends Component {
             onSubmit={async e => {
               e.preventDefault();
               await signup();
-              this.setState({ name: '', email: '', password: ''});
+              this.setState({ name: '', email: '', password: '' });
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
-              <h2>Sign up for an account</h2>
-                <Error error={error} />
-                <label htmlFor="email">
-                  Email
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="email"
-                    value={this.state.email}
-                    onChange={this.saveToState}
-                  />
-                </label>
-                <label htmlFor="name">
-                  Name
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="name"
-                    value={this.state.name}
-                    onChange={this.saveToState}
-                  />
-                </label>
-                <label htmlFor="password">
-                  Password
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="password"
-                    value={this.state.password}
-                    onChange={this.saveToState}
-                  />
-                </label>
+              <h2>Sign Up for An Account</h2>
+              <Error error={error} />
+              <label htmlFor="email">
+                Email
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="email"
+                  value={this.state.email}
+                  onChange={this.saveToState}
+                />
+              </label>
+              <label htmlFor="name">
+                Name
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="name"
+                  value={this.state.name}
+                  onChange={this.saveToState}
+                />
+              </label>
+              <label htmlFor="password">
+                Password
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                  value={this.state.password}
+                  onChange={this.saveToState}
+                />
+              </label>
 
-                <button type="submit">Sign Up!</button>
-              </fieldset>
-            </Form>
-          )}
-        </Mutation>
+              <button type="submit">Sign Up!</button>
+            </fieldset>
+          </Form>
+        )}
+      </Mutation>
     );
   }
 }
 
 export default Signup;
+export { SIGNUP_MUTATION };

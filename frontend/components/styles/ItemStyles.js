@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Item = styled.div`
-  background: ${props => props.theme.gold};
-  border: 1px solid ${props => props.theme.black};
+  background: white;
+  border: 1px solid ${props => props.theme.offWhite};
   box-shadow: ${props => props.theme.bs};
   position: relative;
   display: flex;
@@ -30,7 +30,8 @@ const Item = styled.div`
     & > * {
       background: white;
       border: 0;
-      font-size: 1.5rem;
+      font-family: 'bookman';
+      font-size: 1rem;
       padding: 1rem;
     }
   }

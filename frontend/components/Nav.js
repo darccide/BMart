@@ -8,8 +8,8 @@ import Signout from './Signout';
 
 const Nav = () => (
   <User>
-    {({data: { me } }) => (
-      <NavStyles>
+    {({ data: { me } }) => (
+      <NavStyles data-test="nav">
         <Link href="/items">
           <a>Shop</a>
         </Link>
@@ -39,6 +39,7 @@ const Nav = () => (
           <Link href="/signup">
             <a>Sign In</a>
           </Link>
+
         )}
       </NavStyles>
     )}

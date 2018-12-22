@@ -30,7 +30,7 @@ const AnimationStyles = styled.span`
 
 const Dot = styled.div`
   background: ${props => props.theme.gold};
-  color: white;
+  color: black;
   border-radius: 50%;
   padding: 0.5rem;
   line-height: 2rem;
@@ -57,4 +57,7 @@ const CartCount = ({ count }) => (
   </AnimationStyles>
 );
 
+CartCount.propTypes = {
+  count: PropTypes.number.isRequired,
+};
 export default CartCount;

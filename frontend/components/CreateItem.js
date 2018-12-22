@@ -12,12 +12,14 @@ const CREATE_ITEM_MUTATION = gql`
     $description: String!
     $price: Int!
     $image: String
+    $largeImage: String
   ) {
     createItem(
       title: $title
       description: $description
       price: $price
       image: $image
+      largeImage: $largeImage
     ) {
       id
     }
@@ -42,16 +44,16 @@ class CreateItem extends Component {
     const files = e.target.files;
     const data = new FormData();
     data.append('file', files[0]);
-    data.append('upload_preset', 'BMaaart');
+    data.append('upload_preset', 'sickfits');
 
-    const res = await fetch('https://api.cloudinary.com/v1_1/ddhlidgdf/image/upload', {
+    const res = await fetch('https://api.cloudinary.com/v1_1/wesbostutorial/image/upload', {
       method: 'POST',
       body: data,
     });
     const file = await res.json();
-    console.log(file);
     this.setState({
       image: file.secure_url,
+      largeImage: file.eager[0].secure_url,
     });
   };
   render() {
@@ -59,6 +61,7 @@ class CreateItem extends Component {
       <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
         {(createItem, { loading, error }) => (
           <Form
+            data-test="form"
             onSubmit={async e => {
               // Stop the form from submitting
               e.preventDefault();
@@ -68,7 +71,7 @@ class CreateItem extends Component {
               console.log(res);
               Router.push({
                 pathname: '/item',
-                query: { id: res.data.createItem.id }
+                query: { id: res.data.createItem.id },
               });
             }}
           >

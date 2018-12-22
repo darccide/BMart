@@ -34,7 +34,7 @@ class Reset extends Component {
         variables={{
           resetToken: this.props.resetToken,
           password: this.state.password,
-          confirmPassword: this.state.confirmPassword
+          confirmPassword: this.state.confirmPassword,
         }}
         refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
@@ -48,35 +48,35 @@ class Reset extends Component {
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
-              <h2>Reset your Password</h2>
-                <Error error={error} />
-                <label htmlFor="password">
-                  Password
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="password"
-                    value={this.state.password}
-                    onChange={this.saveToState}
-                  />
-                </label>
+              <h2>Reset Your Password</h2>
+              <Error error={error} />
+              <label htmlFor="password">
+                Password
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                  value={this.state.password}
+                  onChange={this.saveToState}
+                />
+              </label>
 
-                <label htmlFor="confirmPassword">
-                  Confirm Your Password
-                  <input
-                    type="password"
-                    name="confirmPassword"
-                    placeholder="confirmPassword"
-                    value={this.state.confirmPassword}
-                    onChange={this.saveToState}
-                  />
-                </label>
+              <label htmlFor="confirmPassword">
+                Confirm Your Password
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  placeholder="confirmPassword"
+                  value={this.state.confirmPassword}
+                  onChange={this.saveToState}
+                />
+              </label>
 
-                <button type="submit">Reset Your Password!</button>
-              </fieldset>
-            </Form>
-          )}
-        </Mutation>
+              <button type="submit">Reset Your Password!</button>
+            </fieldset>
+          </Form>
+        )}
+      </Mutation>
     );
   }
 }

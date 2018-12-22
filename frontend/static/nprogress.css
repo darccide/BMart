@@ -21,7 +21,7 @@
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px black, 0 0 5px gold;
+  box-shadow: 0 0 10px gold, 0 0 5px gold;
   opacity: 1.0;
 
   -webkit-transform: rotate(3deg) translate(0px, -4px);
@@ -45,7 +45,7 @@
 
   border: solid 2px transparent;
   border-top-color: gold;
-  border-left-color: black;
+  border-left-color: gold;
   border-radius: 50%;
 
   -webkit-animation: nprogress-spinner 400ms linear infinite;

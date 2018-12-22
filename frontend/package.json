@@ -1,14 +1,13 @@
 {
-  "name": "bmart-frontend",
+  "name": "BMart-frontend",
   "version": "1.0.0",
-  "description": "frontend of bmart",
+  "description": "frontend of BMart",
   "main": "index.js",
   "scripts": {
     "dev": "next -p 7777",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start",
     "test": "NODE_ENV=test jest --watch",
-    "test-win": "SET NODE_ENV=test&& jest --watch",
     "heroku-postbuild": "next build"
   },
   "author": "",
@@ -55,8 +54,7 @@
     ],
     "transform": {
       "\\.(gql|graphql)$": "jest-transform-graphql",
-      ".*": "babel-jest",
-      "^.+\\.js?$": "babel-jest"
+      ".*": "babel-jest"
     }
   },
   "//": "This is our babel config, I prefer this over a .babelrc file",

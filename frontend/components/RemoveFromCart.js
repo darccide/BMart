@@ -18,8 +18,8 @@ const BigButton = styled.button`
   background: none;
   border: 0;
   &:hover {
-    color: ${props => props.theme.gold};
-    cursor:pointer;
+    color: ${props => props.theme.red};
+    cursor: pointer;
   }
 `;
 
@@ -27,17 +27,16 @@ class RemoveFromCart extends React.Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
   };
-  // This gets called as soon as a response comes back from the server
-  // after a mutation has been performed
+  // This gets called as soon as we get a response back from the server after a mutation has been performed
   update = (cache, payload) => {
-    // read the cache
+    // 1. first read the cache
     const data = cache.readQuery({ query: CURRENT_USER_QUERY });
-    // remove that item from cart
+    // 2. remove that item from the cart
     const cartItemId = payload.data.removeFromCart.id;
     data.me.cart = data.me.cart.filter(cartItem => cartItem.id !== cartItemId);
-    // write it back to the cache
+    // 3. write it back to the cache
     cache.writeQuery({ query: CURRENT_USER_QUERY, data });
-  }
+  };
   render() {
     return (
       <Mutation
@@ -49,7 +48,7 @@ class RemoveFromCart extends React.Component {
           removeFromCart: {
             __typename: 'CartItem',
             id: this.props.id,
-          }
+          },
         }}
       >
         {(removeFromCart, { loading, error }) => (
@@ -69,3 +68,4 @@ class RemoveFromCart extends React.Component {
 }
 
 export default RemoveFromCart;
+export { REMOVE_FROM_CART_MUTATION };

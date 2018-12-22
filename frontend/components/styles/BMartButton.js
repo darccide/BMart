@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const SickButton = styled.button`
-  background: ${props => props.theme.gold};
-  color: ${props => props.theme.black};
+const BmartButton = styled.button`
+  background: gold;
+  color: black;
   font-weight: 500;
   border: 0;
   border-radius: 0;
@@ -17,4 +17,4 @@ const SickButton = styled.button`
   }
 `;
 
-export default SickButton;
+export default BmartButton;

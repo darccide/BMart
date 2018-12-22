@@ -16,4 +16,5 @@ const SignupPage = props => (
     <RequestReset />
   </Columns>
 );
+
 export default SignupPage;

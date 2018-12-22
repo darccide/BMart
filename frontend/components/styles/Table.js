@@ -11,8 +11,8 @@ const Table = styled.table`
   th {
     border-bottom: 1px solid ${props => props.theme.offWhite};
     border-right: 1px solid ${props => props.theme.offWhite};
-    position: relative;
     padding: 5px;
+    position: relative;
     &:last-child {
       border-right: none;
       width: 150px;
@@ -21,13 +21,13 @@ const Table = styled.table`
       }
     }
     label {
-      display: block;
       padding: 10px 5px;
+      display: block;
     }
   }
   tr {
     &:hover {
-      background: ${props => props.theme.offwhite};
+      background: ${props => props.theme.offWhite};
     }
   }
 `;

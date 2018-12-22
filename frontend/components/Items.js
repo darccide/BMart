@@ -14,6 +14,7 @@ const ALL_ITEMS_QUERY = gql`
       price
       description
       image
+      largeImage
     }
   }
 `;
@@ -34,19 +35,20 @@ class Items extends Component {
   render() {
     return (
       <Center>
-        <p>Items!</p>
         <Pagination page={this.props.page} />
         <Query
           query={ALL_ITEMS_QUERY}
+          // fetchPolicy="network-only"
           variables={{
-            skip: this.props.page * perPage - perPage
+            skip: this.props.page * perPage - perPage,
           }}
         >
           {({ data, error, loading }) => {
-            console.log(data);
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error: {error.message}</p>;
-            return <ItemsList>{data.items.map(item => <Item item={item} key={item.id} />)}</ItemsList>;
+            return (
+              <ItemsList>{data.items.map(item => <Item item={item} key={item.id} />)}</ItemsList>
+            );
           }}
         </Query>
         <Pagination page={this.props.page} />

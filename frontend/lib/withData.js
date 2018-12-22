@@ -8,9 +8,9 @@ function createClient({ headers }) {
     uri: process.env.NODE_ENV === 'development' ? endpoint : prodEndpoint,
     request: operation => {
       operation.setContext({
-        //fetchOptions: {
-        //  credentials: 'include',
-        // },
+        fetchOptions: {
+          credentials: 'include',
+        },
         headers,
       });
     },
@@ -23,14 +23,14 @@ function createClient({ headers }) {
             const { cartOpen } = cache.readQuery({
               query: LOCAL_STATE_QUERY,
             });
-            // write the cart state to the opposite
+            // Write the cart State to the opposite
             const data = {
               data: { cartOpen: !cartOpen },
             };
             cache.writeData(data);
             return data;
-          }
-        }
+          },
+        },
       },
       defaults: {
         cartOpen: false,

@@ -6,7 +6,7 @@ import Error from './ErrorMessage';
 import { CURRENT_USER_QUERY } from './User';
 
 const SIGNIN_MUTATION = gql`
-  mutation SIGNUP_MUTATION($email: String!, $password: String!) {
+  mutation SIGNIN_MUTATION($email: String!, $password: String!) {
     signin(email: $email, password: $password) {
       id
       email
@@ -17,8 +17,9 @@ const SIGNIN_MUTATION = gql`
 
 class Signin extends Component {
   state = {
-    email: '',
+    name: '',
     password: '',
+    email: '',
   };
   saveToState = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -30,44 +31,44 @@ class Signin extends Component {
         variables={this.state}
         refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
-        {(signin, { error, loading }) => (
+        {(signup, { error, loading }) => (
           <Form
             method="post"
             onSubmit={async e => {
               e.preventDefault();
-              await signin();
-              this.setState({ email: '', password: ''});
+              await signup();
+              this.setState({ name: '', email: '', password: '' });
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
-              <h2>Sign into your Account</h2>
-                <Error error={error} />
-                <label htmlFor="email">
-                  Email
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="email"
-                    value={this.state.email}
-                    onChange={this.saveToState}
-                  />
-                </label>
-                <label htmlFor="password">
-                  Password
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="password"
-                    value={this.state.password}
-                    onChange={this.saveToState}
-                  />
-                </label>
+              <h2>Sign into your account</h2>
+              <Error error={error} />
+              <label htmlFor="email">
+                Email
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="email"
+                  value={this.state.email}
+                  onChange={this.saveToState}
+                />
+              </label>
+              <label htmlFor="password">
+                Password
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                  value={this.state.password}
+                  onChange={this.saveToState}
+                />
+              </label>
 
-                <button type="submit">Sign In!</button>
-              </fieldset>
-            </Form>
-          )}
-        </Mutation>
+              <button type="submit">Sign In!</button>
+            </fieldset>
+          </Form>
+        )}
+      </Mutation>
     );
   }
 }
