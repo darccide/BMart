@@ -3,7 +3,7 @@
 ## About
 BMart is a full-stack JavaScript project built upon [React](https://reactjs.org/) and [GraphQL](https://graphql.org/). It is an app that is designed to be an online grocery store. However, since the administrator is able to update what items can be sold this site can be used as a base for any store who would like to use this particular site makeup. It is built primarily with React and [Apollo](https://www.apollographql.com/docs/react/) on the client side, with GraphQL Yoga amd [Prisma](https://www.prisma.io/) connected on the backend.
 
-Currently the administrator can add items, delete items, and edit items. Customers can add items and remove items from their cart. Updating cart functions, finishing order configuration, and adding credit card payment functionality are planned features for the next sprint. As the app development progress, the styling will be updated to become more uniform accross the entire app. This app is still very much in the developmental phase. I welcome feedback and suggestions.
+Currently the administrator can add items, delete items, and edit items. Customers can add items and remove items from their cart as well as pay for their order using credit card payment. Updating cart functions, and enhancing order configuration are planned features for the next sprint. As the app development progress, the styling will be updated to become more uniform accross the entire app. This app is still very much in the developmental phase. I welcome feedback and suggestions.
 
 ## Tech
  * [Node](https://nodejs.org/en/)
