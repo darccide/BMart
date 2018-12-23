@@ -27,7 +27,7 @@ const Pagination = props => (
         <PaginationStyles data-test="pagination">
           <Head>
             <title>
-              BMart! — Page {page} of {pages}
+              BMart — Page {page} of {pages}
             </title>
           </Head>
           <Link

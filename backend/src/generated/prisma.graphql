@@ -1,5 +1,5 @@
 # source: https://eu1.prisma.sh/darccide/BMaaaaart/dev
-# timestamp: Sat Dec 22 2018 10:39:52 GMT+0900 (Korean Standard Time)
+# timestamp: Sun Dec 23 2018 21:13:16 GMT+0900 (Korean Standard Time)
 
 type AggregateCartItem {
   count: Int!
@@ -803,7 +803,6 @@ type OrderItem implements Node {
   title: String!
   description: String!
   image: String!
-  largeImage: String!
   price: Int!
   quantity: Int!
   user: User
@@ -823,7 +822,6 @@ input OrderItemCreateInput {
   title: String!
   description: String!
   image: String!
-  largeImage: String!
   price: Int!
   quantity: Int
   user: UserCreateOneInput
@@ -852,8 +850,6 @@ enum OrderItemOrderByInput {
   description_DESC
   image_ASC
   image_DESC
-  largeImage_ASC
-  largeImage_DESC
   price_ASC
   price_DESC
   quantity_ASC
@@ -869,7 +865,6 @@ type OrderItemPreviousValues {
   title: String!
   description: String!
   image: String!
-  largeImage: String!
   price: Int!
   quantity: Int!
 }
@@ -1043,46 +1038,6 @@ input OrderItemScalarWhereInput {
 
   """All values not ending with the given string."""
   image_not_ends_with: String
-  largeImage: String
-
-  """All values that are not equal to given value."""
-  largeImage_not: String
-
-  """All values that are contained in given list."""
-  largeImage_in: [String!]
-
-  """All values that are not contained in given list."""
-  largeImage_not_in: [String!]
-
-  """All values less than the given value."""
-  largeImage_lt: String
-
-  """All values less than or equal the given value."""
-  largeImage_lte: String
-
-  """All values greater than the given value."""
-  largeImage_gt: String
-
-  """All values greater than or equal the given value."""
-  largeImage_gte: String
-
-  """All values containing the given string."""
-  largeImage_contains: String
-
-  """All values not containing the given string."""
-  largeImage_not_contains: String
-
-  """All values starting with the given string."""
-  largeImage_starts_with: String
-
-  """All values not starting with the given string."""
-  largeImage_not_starts_with: String
-
-  """All values ending with the given string."""
-  largeImage_ends_with: String
-
-  """All values not ending with the given string."""
-  largeImage_not_ends_with: String
   price: Int
 
   """All values that are not equal to given value."""
@@ -1172,7 +1127,6 @@ input OrderItemUpdateDataInput {
   title: String
   description: String
   image: String
-  largeImage: String
   price: Int
   quantity: Int
   user: UserUpdateOneInput
@@ -1182,7 +1136,6 @@ input OrderItemUpdateInput {
   title: String
   description: String
   image: String
-  largeImage: String
   price: Int
   quantity: Int
   user: UserUpdateOneInput
@@ -1192,7 +1145,6 @@ input OrderItemUpdateManyDataInput {
   title: String
   description: String
   image: String
-  largeImage: String
   price: Int
   quantity: Int
 }
@@ -1212,7 +1164,6 @@ input OrderItemUpdateManyMutationInput {
   title: String
   description: String
   image: String
-  largeImage: String
   price: Int
   quantity: Int
 }
@@ -1402,46 +1353,6 @@ input OrderItemWhereInput {
 
   """All values not ending with the given string."""
   image_not_ends_with: String
-  largeImage: String
-
-  """All values that are not equal to given value."""
-  largeImage_not: String
-
-  """All values that are contained in given list."""
-  largeImage_in: [String!]
-
-  """All values that are not contained in given list."""
-  largeImage_not_in: [String!]
-
-  """All values less than the given value."""
-  largeImage_lt: String
-
-  """All values less than or equal the given value."""
-  largeImage_lte: String
-
-  """All values greater than the given value."""
-  largeImage_gt: String
-
-  """All values greater than or equal the given value."""
-  largeImage_gte: String
-
-  """All values containing the given string."""
-  largeImage_contains: String
-
-  """All values not containing the given string."""
-  largeImage_not_contains: String
-
-  """All values starting with the given string."""
-  largeImage_starts_with: String
-
-  """All values not starting with the given string."""
-  largeImage_not_starts_with: String
-
-  """All values ending with the given string."""
-  largeImage_ends_with: String
-
-  """All values not ending with the given string."""
-  largeImage_not_ends_with: String
   price: Int
 
   """All values that are not equal to given value."""

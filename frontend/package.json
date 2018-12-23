@@ -1,12 +1,12 @@
 {
-  "name": "BMart-frontend",
+  "name": "sick-fits-frontend",
   "version": "1.0.0",
-  "description": "frontend of BMart",
+  "description": "Sick Fits! An example React, GraphQL, Next and Apollo",
   "main": "index.js",
   "scripts": {
     "dev": "next -p 7777",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start",
     "test": "NODE_ENV=test jest --watch",
     "heroku-postbuild": "next build"
   },

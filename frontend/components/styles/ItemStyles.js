@@ -31,7 +31,7 @@ const Item = styled.div`
       background: white;
       border: 0;
       font-family: 'bookman';
-      font-size: 1rem;
+      font-size: 1.5rem;
       padding: 1rem;
     }
   }
