@@ -35,7 +35,10 @@ const orderUl = styled.ul`
 class OrderList extends React.Component {
   render() {
     return (
-      <Query query={USER_ORDERS_QUERY}>
+      <Query
+        query={USER_ORDERS_QUERY}
+        pollinterval={200}
+      >
         {({ data: { orders }, loading, error }) => {
           if (loading) return <p>loading...</p>;
           if (error) return <Error erorr={error} />;
