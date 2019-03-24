@@ -119,7 +119,7 @@ Your app should now be visible on [localhost:7777](localhost:7777).
 Make sure you are running both the frontend and backend folders.
 
 ## Author
-Steven Thomson is a Fullstack Developer who currently resides in South Korea, but is transistioning back to the U.S. If you would like to contact him:
+Steven Thomson is a Fullstack Developer who recently transistioned back to the U.S. If you would like to contact him:
 
  * steven.thomson88@gmail.com
  * [Steven Thomson's LinkedIn](https://www.linkedin.com/in/steventhomson1988/)
